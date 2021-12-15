@@ -10,7 +10,9 @@ import android.widget.MediaController
 import androidx.core.app.ActivityCompat.startActivityForResult
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.util.Log
+import android.widget.Button
 import java.net.URI
 import java.io.File
 
@@ -19,16 +21,16 @@ import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var player : VideoView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val button : Button = findViewById(R.id.button)
+
+        button.setOnClickListener {
+            this.startActivity(Intent(this, PlayerActivity::class.java))
+        }
         //player = findViewById(R.id.player)
-        val photoPickerIntent = Intent(Intent.ACTION_GET_CONTENT)
-        photoPickerIntent.setType("video/*")
-        startActivityForResult(Intent.createChooser(photoPickerIntent, "select video"), 1)
-        val path: Uri? = photoPickerIntent.getData()
 
         /*player.setVideoURI(path)
 
@@ -38,33 +40,5 @@ class MainActivity : AppCompatActivity() {
         //player.setVideoPath("http://techslides.com/demos/sample-videos/small.mp4")
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && data != null) {
-            val uploadfileuri = data.data
-            val file = File(uploadfileuri!!.path)
-            player = findViewById(R.id.player)
-            player.setVideoURI(uploadfileuri)
 
-            val mediaController = MediaController(this)
-            player.setMediaController(mediaController)
-            mediaController.setMediaPlayer(player)
-            Log.d("Tag", uploadfileuri.toString())
-
-            //player.setVideoPath("http://techslides.com/demos/sample-videos/small.mp4")
-        }
-    }
-
-    fun play(view: View?) {
-        player.start()
-    }
-
-    fun pause(view: View?) {
-        player.pause()
-    }
-
-    fun stop(view: View?) {
-        player.stopPlayback()
-        player.resume()
-    }
 }
