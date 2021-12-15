@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity() {
         photoPickerIntent.setType("video/*")
         startActivityForResult(Intent.createChooser(photoPickerIntent, "select video"), 1)
         val path: Uri? = photoPickerIntent.getData()
-/*
-        Log.d("Tag", path.toString())
-*/
+
         /*player.setVideoURI(path)
 
         val mediaController = MediaController(this)
