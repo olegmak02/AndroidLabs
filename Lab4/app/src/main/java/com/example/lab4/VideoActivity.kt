@@ -2,18 +2,16 @@ package com.example.lab4
 
 import android.content.Intent
 import android.media.MediaPlayer
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
 import android.widget.VideoView
-import java.io.File
 
-class PlayerActivity : AppCompatActivity() {
+class VideoActivity : AppCompatActivity() {
     private lateinit var player : VideoView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player)
+        setContentView(R.layout.activity_video)
 
         val photoPickerIntent = Intent(Intent.ACTION_GET_CONTENT)
         photoPickerIntent.setType("video/*")
@@ -24,10 +22,15 @@ class PlayerActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && data != null) {
             val uploadfileuri = data.data
+            /*val mp = MediaPlayer()
+            mp.setDataSource(this, uploadfileuri!!)
+
+            val mc = MediaController(this)
+            mc.setMediaPlayer(mp)
+            mp.prepare()
+            mp.start()*/
             player = findViewById(R.id.player)
-
             player.setVideoURI(uploadfileuri)
-
             val mediaController = MediaController(this)
             player.setMediaController(mediaController)
             mediaController.setMediaPlayer(player)

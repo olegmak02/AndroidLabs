@@ -17,18 +17,25 @@ import java.net.URI
 import java.io.File
 
 
-
-
-
 class MainActivity : AppCompatActivity() {
+    private lateinit var button_video : Button
+    private lateinit var button_audio : Button
+    private lateinit var button_internet : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button : Button = findViewById(R.id.button)
+        button_video = findViewById(R.id.button_video)
+        button_audio = findViewById(R.id.button_audio)
+        button_internet = findViewById(R.id.button_internet)
 
-        button.setOnClickListener {
-            this.startActivity(Intent(this, PlayerActivity::class.java))
+        button_video.setOnClickListener {
+            this.startActivity(Intent(this, VideoActivity::class.java))
+        }
+
+        button_audio.setOnClickListener {
+            this.startActivity(Intent(this, AudioActivity::class.java))
         }
         //player = findViewById(R.id.player)
 
