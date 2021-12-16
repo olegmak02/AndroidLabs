@@ -37,15 +37,5 @@ class MainActivity : AppCompatActivity() {
         button_audio.setOnClickListener {
             this.startActivity(Intent(this, AudioActivity::class.java))
         }
-        //player = findViewById(R.id.player)
-
-        /*player.setVideoURI(path)
-
-        val mediaController = MediaController(this)
-        player.setMediaController(mediaController)
-        mediaController.setMediaPlayer(player)*/
-        //player.setVideoPath("http://techslides.com/demos/sample-videos/small.mp4")
     }
-
-
 }
