@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_audio.xml" value="0.1" />
+        <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_internet_data.xml" value="0.1" />
         <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_player.xml" value="0.27350427350427353" />
-        <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_video.xml" value="0.33" />
+        <entry key="..\:/AndroidLabs/Lab4/app/src/main/res/layout/activity_video.xml" value="0.1" />
       </map>
     </option>
   </component>

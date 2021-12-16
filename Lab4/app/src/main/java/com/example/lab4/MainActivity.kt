@@ -18,24 +18,28 @@ import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var button_video : Button
-    private lateinit var button_audio : Button
-    private lateinit var button_internet : Button
+    private lateinit var buttonVideo : Button
+    private lateinit var buttonAudio : Button
+    private lateinit var buttonInternet : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button_video = findViewById(R.id.button_video)
-        button_audio = findViewById(R.id.button_audio)
-        button_internet = findViewById(R.id.button_internet)
+        buttonVideo = findViewById(R.id.button_video)
+        buttonAudio = findViewById(R.id.button_audio)
+        buttonInternet = findViewById(R.id.button_internet)
 
-        button_video.setOnClickListener {
+        buttonVideo.setOnClickListener {
             this.startActivity(Intent(this, VideoActivity::class.java))
         }
 
-        button_audio.setOnClickListener {
+        buttonAudio.setOnClickListener {
             this.startActivity(Intent(this, AudioActivity::class.java))
+        }
+
+        buttonInternet.setOnClickListener {
+            this.startActivity(Intent(this, InternetDataActivity::class.java))
         }
     }
 }

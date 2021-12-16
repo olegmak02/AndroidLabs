@@ -11,17 +11,17 @@ import android.widget.MediaController
 import android.widget.Toast
 
 class AudioActivity : AppCompatActivity() {
-    private lateinit var button_start : Button
-    private lateinit var button_pause : Button
-    private lateinit var button_stop : Button
+    private lateinit var buttonStart : Button
+    private lateinit var buttonPause : Button
+    private lateinit var buttonStop : Button
     private var mp: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_audio)
-        button_start = findViewById(R.id.button_start)
-        button_pause = findViewById(R.id.button_pause)
-        button_stop = findViewById(R.id.button_stop)
+        buttonStart = findViewById(R.id.button_start)
+        buttonPause = findViewById(R.id.button_pause)
+        buttonStop = findViewById(R.id.button_stop)
     }
 
     fun start(view: View) {
