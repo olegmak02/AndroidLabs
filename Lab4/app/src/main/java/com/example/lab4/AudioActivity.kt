@@ -24,6 +24,15 @@ class AudioActivity : AppCompatActivity() {
         buttonStop = findViewById(R.id.button_stop)
     }
 
+    override fun onStop() {
+        super.onStop()
+        mp?.stop()
+        mp?.release()
+        mp = null
+    }
+    
+
+
     fun start(view: View) {
         if (mp == null) {
             val audioChooserIntent = Intent(Intent.ACTION_GET_CONTENT)
